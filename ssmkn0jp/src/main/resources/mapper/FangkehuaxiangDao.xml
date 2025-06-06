@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FangkehuaxiangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FangkehuaxiangEntity" id="fangkehuaxiangMap">
+        <result property="nianling" column="nianling"/>
+        <result property="xingbie" column="xingbie"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FangkehuaxiangVO" >
+		SELECT * FROM fangkehuaxiang  fangkehuaxiang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FangkehuaxiangVO" >
+		SELECT  fangkehuaxiang.* FROM fangkehuaxiang  fangkehuaxiang
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FangkehuaxiangView" >
+
+		SELECT  fangkehuaxiang.* FROM fangkehuaxiang  fangkehuaxiang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FangkehuaxiangView" >
+		SELECT * FROM fangkehuaxiang  fangkehuaxiang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
